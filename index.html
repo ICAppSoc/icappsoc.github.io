@@ -68,9 +68,27 @@
          <p>
            Under Extras
            <ul>
+             <li>Android Support Repository</li>
              <li>Android Support Library</li>
+             <li>Intel x86 Emulator Accelerator (HAXM)</li>
            </ul>
          </p>
+         
+         <h3>
+           To run applications, you have two choices:
+         </h3>
+         <p>
+           <a href="http://developer.android.com/tools/device.html">Using physical Android device</a>
+         </p>
+         <p>
+           Using virtual Android device (AVD)
+           <ol>
+             <li>Go to %ANDROID_SDK%/extras/intel/HAXM and run the installer.</li>
+             <li>Find and run the Android Virtual Device (AVD) Manager.</li>
+             <li>Go through the wizard to create a virtual device, choosing the x86 image.</li>
+           </ol>
+         </p>
+         <p>Then just click Run in Android Studio, and if the project is error-free, it will let you choose your hardware device or launch your emulator.</p>
       </section>
       
       <footer>
