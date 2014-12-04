@@ -29,6 +29,29 @@
       <section>
       <h3><a name="ios-source" class="anchor" href="#ios-source"><span class="octicon octicon-link"></span></a>iOS Session One</h3>
       <h3>
+        Delegate pattern + UITableView
+      </h3>
+      <p>
+        You can download the slides over <a href="https://drive.google.com/file/d/0B6t3krHJdAvlS2RVWGlSLWxRRlk/view?usp=sharing">here</a>.
+        We hope that the session was useful and you got a basic understanding of the delegate pattern and its use inside iOS applications. <a href="https://developer.apple.com/library/ios/documentation/General/Conceptual/DevPedia-CocoaCore/Delegation.html">Here</a> you can find another brief coverage of the pattern by Apple and for the UITableView be sure to check out the <a href="https://developer.apple.com/library/IOs/documentation/UIKit/Reference/UITableViewDelegate_Protocol/index.html">Delegate</a> and the <a href="https://developer.apple.com/LIBRARY/IOS/documentation/UIKit/Reference/UITableViewDataSource_Protocol/index.html">Data Source</a>.
+        <br><br>
+        Regarding the Weather app, these are the steps needed to complete the project:
+        <ul>
+          <li>Create a new XCode project using the <i>Single View Application</i> template</li>
+          <li>Open Main.storyboard and drag a UITableView inside the view</li>
+          <li>By control-dragging the table view to ViewController.h you should be able to create a new property for the view controller, call it <i>tableView</i></li>
+          <li>Control drag from the table view again to the ViewController <i>cell</i> which is top left in your storyboard window, and make the view controller both the Delegate and the Data Source for the table view. (You must do this action twice)</li>
+          <li>In ViewController.h declare that the class is going to conform to UITableViewDelegate and UITableViewDataSource (this can also be done in ViewController.m, in the private interface)</li>
+          <li>Create a new property for the ViewController which is going to be a mutable array to hold the various forecasts. Call it <i>daysWeather</i>.</li>
+          <li>Write down the required methods for the UITableViewDataSource (number of rows and the cell for each index path).</li>
+          <li>Go to <a href="https://gist.github.com/bebus77/030157d2eb1f104a15e4">this page</a> and grab the method in the gist. Paste it in ViewController.m and in the viewDidLoad method call it. ([self downloadWeatherForecast];)</li>
+          <li>Specify the exact content of the text label of the UITableViewCell(s) in your table view based on the content of the array. For each element you can access the name of the day using <i>dayWeather[@"name"]</i> and the forecast with <i>dayWeather[@"forecast"][@"weather"][0][@"main"]</i>, where <i>dayWeather</i> is one dictionaries in the <i>daysWeather</i> array.</li>
+          <li>Add the did select cell method and prompt an UIAlertView, then have fun adding more cool features!</li>
+        </ul>
+        
+        The entire code can be found on GitHub at <a href="https://github.com/ICAppSoc/weatherforecast">this address</a>.
+      </p>
+      <h3>
         App Lifecycle
       </h3>
       <p>
